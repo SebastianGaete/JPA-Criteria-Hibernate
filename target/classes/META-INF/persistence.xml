@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="ejemploJPACriteria" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Package donde estará nuestra clase Entity que será la que se utilizará en la BBDD -->
+        <class>com.sebastian.apicriteria.entity.Cliente</class>
+        <class>com.sebastian.apicriteria.entity.Usuario</class>
+        <!-- Configuración para que solo mapee las clases Entity -->
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <!-- Configuraciones para conectar a la base de datos e Hibernate -->
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/java" />
+            <property name="jakarta.persistence.jdbc.user" value="root" />
+            <property name="jakarta.persistence.jdbc.password" value="warcrychile123"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+        </properties>
+    </persistence-unit>
+</persistence>
