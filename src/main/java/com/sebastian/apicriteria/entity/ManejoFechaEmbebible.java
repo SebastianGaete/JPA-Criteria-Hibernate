@@ -37,7 +37,10 @@ public class ManejoFechaEmbebible {
 
 
     public String getFechaCreacion() {
-        return fechaCreacion.format(DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm"));
+        if(fechaActualizacion != null){
+            return fechaActualizacion.format(DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm"));
+        }
+        return "No Asignado";
     }
 
     public void setFechaCreacion(LocalDateTime fechaCreacion) {
